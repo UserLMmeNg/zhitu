@@ -1,0 +1,149 @@
+html,body,i,p,span,img,a {
+	margin: 0;
+	padding: 0;
+}
+html,body{
+	font-size: 62.5%;
+	font-family: PingFangSC-Regular,PingFangSC-Light;
+	background-color: #f5f5f5;
+}
+a {
+	text-decoration: none;
+}
+.search-bar {
+	width: 100%;
+	height: 2.89rem;
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	background-color: #fff;
+	font-size: 0;
+}
+.search-bar span {
+	position: relative;
+	display: inline-block;
+	width: 33.3333%;
+	text-align: center;
+	line-height: 2.89rem;
+	color: #040000;
+	font-size: 1.32rem;
+}
+.module-selected, .module-item-selected{
+	color: #52c644 !important;
+}
+.search-bar .module::after {
+	position: absolute;
+    right: 2.88rem;
+    top: 1.32rem;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #040000;
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+}
+.search-bar span:nth-of-type(3)::after {
+	right: 1.7rem;
+}
+.search-bar .module-selected::after {
+	position: absolute;
+    right: 2.88rem;
+    top: 1.32rem;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #52c644;
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+}
+.tips {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	position: fixed;
+	top: 0;
+	z-index: 990;
+}
+.tips .search-select-box {
+	font-size: 0;
+    position: fixed;
+    top: 2.9rem;
+    width: 100%;
+    padding: 0.4rem 2%;
+    background: #fff;
+    border-top: 1px solid #dde2f0;
+}
+.tips .search-select-box .select-item {
+	display: inline-block;
+    width: 20%;
+    text-align: center;
+    margin: 0.3rem 2%;
+    height: 3.3rem;
+    line-height: 3.3rem;
+    background: #f5f5f5;
+    color: #333;
+    font-size: 1.37333rem;
+    border-radius: 0.10667rem;
+}
+.show {
+	display: block;
+}
+.hide {
+	display: none;
+}
+.hot-list {
+	background-color: #f4f4f4;
+	padding-top: 4rem;
+}
+.hot-teacher {
+	height: 6.5rem;
+	padding: 1.5rem;
+	margin-bottom: 0.5rem;
+	background-color: #fff;
+	position: relative;
+}
+.hot-teacher i img {
+	width: 6.5rem;
+	height: 6.5rem;
+	float: left;
+}
+.hot-right {
+	padding-left: 8rem;	
+}
+.hot-right p {
+	font-size: 1.4rem;
+	color: #878282;
+}
+.hot-right p span.teacher {
+	font-size: 1.4rem;
+	color: #262323;
+}
+.hot-right .title .tip {
+	float: right;
+}
+.hot-right .type {
+	display: inline-block;
+    padding: 1.5rem 0 0 1.5rem;
+    background-image: url(../image/check.png);
+    background-repeat: no-repeat;
+    background-size: 1.4rem 1.4rem;
+    background-position: 0.1rem 1.65rem;
+    color: #262323;
+}
+.sub, .lev {
+	display: inline-block;
+    font-size: 0.32rem;
+    padding: 0 0.2rem;
+    margin-left: 0.5rem;
+    border: 1px solid #35c643;
+    border-radius: 0.2rem;
+}
+.sub {
+	color: #fff;
+	background-color: #35c643;
+}
+.lev {
+	color:#35c643; 
+}

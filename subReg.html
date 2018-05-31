@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+	<title>知途家教</title>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.14/dist/vue.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/subReg.css">
+</head>
+<body>
+	<div id="detail">
+		<div class="search-bar">
+			<span @click="clickGrade" :class="isShowGrade ? 'module-selected' : ''" class="module">{{ grade }}<i></i></span>
+			<span @click="clickSubject" :class="isShowSubject ? 'module-selected' : ''" class="module-selected">{{ subject }}<i></i></span>
+			<span @click="clickType" :class="isShowType ? 'module-selected' : ''" class="module">{{ teacherType }}<i></i></span>
+		</div>
+		<div v-if="condition" :class="isShowAllSelect ? 'show' : 'hide'" class="tips">
+			<div :class="isShowGrade ? 'show' : 'hide'" class="search-select-box">
+				<span v-for="item in condition.grade" @click="clickItem(item)" :class="item.isSelected ? 'module-item-selected' : ''" class="select-item">{{ item.label }}</span>
+			</div>
+			<div :class="isShowSubject ? 'show' : 'hide'" class="search-select-box">
+				<span v-for="item in condition.subject" @click="clickItem(item)" :class="item.isSelected ? 'module-item-selected' : ''" class="select-item">{{ item.label }}</span>
+			</div>
+			<div :class="isShowType ? 'show' : 'hide'" class="search-select-box">
+				<span v-for="item in condition.type" @click="clickItem(item)" :class="item.isSelected ? 'module-item-selected' : ''" class="select-item">{{ item.label }}</span>
+			</div>
+		</div>
+		<div class="hot-list">
+			<a :href="'./reg.html?id='+item.id+''" v-for="item in teacherList">
+				<div  class="hot-teacher">
+					<i><img :src="item.image"></i>
+					<div class="hot-right">
+						<p class="title"><span class="teacher">{{ item.name }}</span><span v-for="subItem in item.subject" class="sub">{{ subItem.label }}</span><span class="lev" v-for="gradeItem in item.grade">{{ gradeItem.label }}</span><span class="tip">已授{{ item.teach_time }}课时</span></p>
+						<p>{{ item.teach_year }}年教龄</p>
+						<p class="type" v-for="extItem in item.extend_tag">{{ extItem.label }}</p>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+	<script type="text/javascript" src="./js/subReg.js"></script>
+</body>
+</html>

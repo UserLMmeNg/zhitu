@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+	<title>知途家教</title>
+	<link rel="stylesheet" type="text/css" href="./css/reg.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.14/dist/vue.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+</head>
+<body>
+	<div id="detail">
+		<div class="head">
+			<i><img :src="list.image"></i>
+			<div class="hot-right">
+				<p class="title"><span class="teacher">{{ list.name }}</span><span class="sub" v-for="subItem in list.subject">{{ subItem.label }}</span><span class="lev" v-for="gradeItem in list.grade">{{ gradeItem.label }}</span><span class="tip">{{ list.price }}</span></p>
+				<p>{{ list.teach_year }}年教龄</p>
+				<p class="type" v-for="extItem in list.extend_tag">{{ extItem.label }}</p>
+				<i>已授课{{ list.teach_time}}小时</i>
+			</div>
+		</div>
+		<div class="info-box">
+			<div class="assess-teacher-info">
+				<p class="title introduce">个人简介</p>
+				<div class="content">
+					<p>{{ list.intro }}</p>
+				</div>
+			</div>
+			<div class="assess-teacher-info">
+				<p class="title">教学经历</p>
+				<div class="content" v-for="exItem in list.teacher_experience">
+					<p>{{ exItem.title}}</p>
+				</div>
+			</div>
+			<div class="assess-teacher-info">
+				<p class="title reward">成功案例</p>
+				<div class="content teach-case-content" v-for="caseItem in list.teacher_case">
+					<p class="teach-title">{{ caseItem.title}}</p>
+					<p>{{ caseItem.content}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="order-line">
+			<div class="order-text">
+				满意就预约吧
+      		</div>
+      		<hr>
+		</div>
+		<div class="order-btn">
+			<div class="btn collect">
+				<span>收藏</span>
+			</div>
+			<div class="btn order-now">
+				预约试讲
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="./js/reg.js"></script>
+</body>
+</html>
